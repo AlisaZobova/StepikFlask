@@ -12,7 +12,8 @@ def index():
 
 
 @app.route('/live')
-def live(game=GameOfLife(25, 25)):
+def live():
+    game = GameOfLife()
     if game.counter > 0:
         game.form_new_generation()
     game.counter += 1

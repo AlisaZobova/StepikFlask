@@ -16,12 +16,12 @@ class SingletonMeta(type):
 
 
 class GameOfLife(metaclass=SingletonMeta):
-    def __init__(self, width=20, height=20, counter=0):
+    def __init__(self, width=20, height=20):
         self.__width = width
         self.__height = height
         self.world = self.generate_universe()
         self.old_world = self.world
-        self.counter = counter
+        self.counter = 0
 
     def form_new_generation(self):
         universe = self.world
